@@ -3,7 +3,7 @@
 #include<memory.h>
 #include<math.h>
 
-/ kbd
+// kbd
 const char str[] = "zsxdcvgbhnjmq2w3er5t6y7ui9o0p[=]\0";
 
 // func: beep freq
