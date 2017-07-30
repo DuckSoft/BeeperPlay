@@ -24,9 +24,10 @@ int main() {
 	// splash
 	printf("input music string.\nkbd: %s\n\n# ",str);
 	// alloc
-	char *buff = memset(malloc(sizeof(char)*256),0,256);
+	static const size_t bufsize = 32767;
+	char *buff = memset(malloc(sizeof(char)*bufsize),0,bufsize);
 	// input
-	gets(buff);
+	fgets(buff, bufsize, stdin);
 	// beep
 	for (int i=0; buff[i]!=0; bf(buff[i]), ++i);
 	// dealloc
