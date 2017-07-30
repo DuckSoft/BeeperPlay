@@ -15,7 +15,7 @@ void bf(char chr) {
 
 	for (int i=0; str[i]!=0; ++i) 
 		if ((int)str[i] == chr) {
-			Beep(c * pow(2,((double)i)/12.0),20);
+			Beep(c * pow(2,((double)i)/12.0),180);
 			break;
 		}
 }
