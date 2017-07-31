@@ -30,16 +30,13 @@ void bf(char chr) {
 
 int main() {
 	// splash
-	printf("input music string.\n"
-	       " kbd: %s\n"
-		   " use Space for a pause.\n# ",str);
+	printf("This is BeeperPlay.\n ->\n",str);
 	// alloc
 	static const size_t bufsize = 32767;
 	char *buff = memset(malloc(sizeof(char)*bufsize),0,bufsize);
-	// input
-	fgets(buff, bufsize, stdin);
-	// beep
-	for (int i=0; buff[i]!=0; bf(buff[i]), ++i);
+	// input and beep
+	while (fgets(buff, bufsize, stdin)) 
+		for (int i=0; buff[i]!=0; bf(buff[i]), ++i);
 	// dealloc
 	free(buff);
 }
