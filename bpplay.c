@@ -36,9 +36,11 @@ int main() {
 	char *buff = memset(malloc(sizeof(char)*bufsize),0,bufsize);
 	// input and beep
 	while (fgets(buff, bufsize, stdin)) {
-		int len;	// note length
-		for (int i=0, len = 1; buff[i]!=0; ++i) {
-			for (; buff[i]=='-'; ++i) len++;
+		int len;
+		
+		for (int i=0; buff[i]!=0; ++i) {
+			len = 1;
+			for (int j=i+1; buff[j]=='-'; ++j) len++;
 			bf(buff[i],len);
 		}
 	}
