@@ -9,7 +9,7 @@ const char str[] = "zsxdcvgbhnjmq2w3er5t6y7ui9o0p[=]\0";
 const int note_duration = 180;
 
 // func: beep freq
-void bf(char chr, int length) {
+void bf(char chr, int length, int shift) {
 	// Twelve-tone equal temperament
 	// freq
 	static const double a = 440.0;	// A440 standard
@@ -23,7 +23,7 @@ void bf(char chr, int length) {
 
 	for (int i=0; str[i]!=0; ++i) 
 		if ((int)str[i] == chr) {
-			Beep(c * pow(2,((double)i)/12.0),note_duration * length);
+			Beep(c * pow(2,((double)(i+shift)/12.0),note_duration * length);
 			break;
 		}
 }
